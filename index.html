@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Favicons and Icons -->
+		<link rel="shortcut icon" type="image/png" href="static/images/icons/favicon.png">
+		<link rel="icon" sizes="192x192" href="static/images/icons/favicon.png">
+		<link rel="apple-touch-icon" href="static/images/icons/favicon.png">
+
+		<meta charset="utf-8">
+		<title>VIRE</title>
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<meta name="theme-color" content="#cd3538" /> <!--Custom android colour-->
+	</head>
+  <body>
+    <div class="navigation shadow-1">
+      <div class="nav-container container">
+        <div class="brand">
+          <a href="/feed"><img class="logo" src="images/logo.png"></img></a>
+          <a href="/feed">VIRE</a>
+        </div>
+        <nav>
+          <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+          <ul class="nav-list">
+            <li>
+              <a href="#" class="line">Home</a>
+            </li>
+            <li>
+              <a href="#!" class="line">Activities</a>
+            </li>
+            <li>
+              <a href="#">Escape rooms</a>
+            </li>
+            <li>
+              <a href="#">Cafe</a>
+            </li>
+            <li>
+              <a href="#">Parties</a>
+            </li>
+            <li>
+              <a href="#">Corporate</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Info</a>
+            </li>
+            <!--DON'T DELETE. THE FOLLOWING CODE IS HOW YOU ADD A DROPDOWN
+            <li>
+              <a href="#!" class="nav-dropdown-link">Test dropdown</a>
+              <ul class="nav-dropdown">
+                <li >
+                  <a href="/logout" class="">Log out</a>
+                  <a href="/logout" class="">Change profile pic</a>
+                </li>
+              </ul>
+            </li>!-->
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script>
+    (function($) { // start jquery
+      $(function() {
+        // If a link has a dropdown...
+        $('nav ul li a:not(:only-child)').click(function(e) {//add toggle
+          $(this).siblings('.nav-dropdown').toggle();
+          $('.nav-dropdown').not($(this).siblings()).hide();//if a drop down already open, close it
+          e.stopPropagation();
+        });
+        $('html').click(function() {
+          $('.nav-dropdown').hide();// Clicking away from dropdown removes dropdown class
+        });
+        $('#nav-toggle').click(function() {
+          $('nav ul').slideToggle();
+        });
+        $('#nav-toggle').on('click', function() {
+          this.classList.toggle('active');
+        });
+      });
+    })(jQuery); // end jQuery
+    </script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+*,body,html {
+  margin: 0;
+  padding: 0;
+  font-family: Source Sans Pro,sans-serif;
+  touch-action: manipulation;
+}
+a{
+  text-decoration: none;
+}
+
+/*START NAV BAR CSS*/
+.logo {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    margin: 0em .5em;
+    vertical-align: middle;
+}
+.navigation {
+  height: 70px;
+  background: #4568DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 65px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+  padding-bottom: 30px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  color: #ffffff;
+  text-decoration: none;
+  /*background: #cd3538;*/
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  color: #ffffff;
+}
+.nav-dropdown-link:after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav ul li ul li {
+  /*min-width: 190px;*/
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.img-dropdown {
+}
+.img-dropdown img {
+  vertical-align: middle;
+}
+
+.img-dropdown::after {
+  content: none;
+  content: ''!important;
+  padding: 0 0;
+}
+
+/* Mobile nav */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*background: #cd3538;*/
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 900px) { /*IF CHANGING THIS WIDTH, CHANGE OTHER ONE TOO!*/
+  .nav-mobile {
+    display: block;
+  }
+  .nav-list .line::before, .nav-list .line::after {
+    content: none;
+  }
+
+  nav ul li a,
+  nav ul li a:visited {
+    background: #4568DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  nav {
+    width: 100%;
+    padding: 70px 0 30px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+
+.nav-container {
+  width: 100% !important;
+}
+@media screen and (min-width: 901px) { /*IF CHANGING THIS WIDTH, CHANGE OTHER ONE TOO!*/
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 2px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: '';
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#nav-toggle span {
+
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before {
+  -webkit-transform: translateY(10px) rotate(45deg);
+  -ms-transform: translateY(10px) rotate(45deg);
+  -o-transform: translateY(10px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
+}
+#nav-toggle.active span:after {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+}
