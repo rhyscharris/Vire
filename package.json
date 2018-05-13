@@ -1,0 +1,22 @@
+{
+  "name": "vire",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhyscharris/Vire.git"
+  },
+  "author": "Rhys Harris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhyscharris/Vire/issues"
+  },
+  "homepage": "https://github.com/rhyscharris/Vire#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  }
+}
