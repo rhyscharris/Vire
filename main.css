@@ -8588,7 +8588,7 @@ h3 {
 }
 
 .bg-hero {
-  margin: 0 0 4rem 0 !important;
+  margin: 0 0 3.25rem 0 !important;
   background: url(images/slide-1.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -8598,16 +8598,74 @@ h3 {
   color: white;
 }
 
-.items h2 {
+.items h3 {
   font-weight: 400;
   font-size: 1.5rem;
   color: #5a5a5a;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .items .col-md-3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
+}
+
+.testimonials {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.testimonials .rounded-circle {
+  margin-right: 2rem;
+}
+
+.testimonials .quote-text {
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.bg-grey {
+  background-color: #424242;
+}
+
+footer {
+  font-size: 1rem;
+  padding: 4.5rem 0;
+}
+
+.text-light a {
+  color: #adb5bd;
+  transition: color 0.1s ease;
+  text-decoration: none;
+}
+
+.text-light a:hover {
+  color: #fff;
+  transition: color 0.1s ease;
+}
+
+.text-light .text-muted {
+  color: #adb5bd !important;
+}
+
+.text-light .text-muted a {
+  color: #c7cfd8 !important;
+}
+
+.footer-text {
+  color: #c7cfd8;
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    width: 32%;
+  }
+}
+@media (max-width: 500px) {
+  .col-md-3 {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
