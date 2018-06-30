@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rhyscharris/Vire#readme",
   "dependencies": {
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.1",
+    "pug": "^2.0.3"
   }
 }
