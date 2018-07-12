@@ -1,0 +1,7 @@
+{% extends 'userpage.html' %}
+
+{% block contents %}
+    {% for review in user.reviews %}
+        {% include 'includes/_review.html' %}
+    {% endfor %}
+{% endblock %}

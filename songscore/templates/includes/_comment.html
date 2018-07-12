@@ -1,0 +1,11 @@
+<div class="comment">
+	<a href='/user/{{ comment.user.username }}'>
+		<img src="{{ comment.user.picture }}"></img>
+	</a>
+	<div class="">
+		<a href='/user/{{ comment.user.username }}'>
+			<div class="name">{{ comment.user.name }}</div>
+		</a>
+		<div class="text">{{ comment.text }}</div>
+	</div>
+</div>

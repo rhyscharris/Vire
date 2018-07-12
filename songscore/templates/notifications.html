@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block pagename %}Notifications{% endblock %}
+
+{% block body %}
+<div class="section shadow-1">
+    <div class="section-content">
+        <h2 class="capital">NOTIFICATIONS</h2>
+    </div>
+</div>
+<div id="notifications">
+	{% for notification in notifications['likes'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['username'] }} liked your review of {{ notification['subject_name'] }}
+    	</div></div></div>
+	{% endfor %}
+	{% for notification in notifications['dislikes'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['username'] }} disliked your review of {{ notification['subject_name'] }}
+    	</div></div></div>
+	{% endfor %}
+	{% for notification in notifications['comments'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['username'] }} commented on your review of {{ notification['subject_name'] }}, "{{ notification['text'] }}"
+    	</div></div></div>
+	{% endfor %}
+	{% for notification in notifications['follows'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['username'] }} followed you
+    	</div></div></div>
+	{% endfor %}
+	{% for notification in notifications['review_mentions'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['username'] }} mentioned you in their review of {{ notification['subject_name'] }}
+    	</div></div></div>
+	{% endfor %}
+	{% for notification in notifications['comment_mentions'] %}
+    	<div><div class="text-group"><div class='text'>
+    		{{ notification['commenter_username'] }} mentioned you in their comment on {{ notification['reviewer_username'] }}'s review of {{ notification['subject_name'] }}
+    	</div></div></div>
+	{% endfor %}
+</div>
+{% endblock %}

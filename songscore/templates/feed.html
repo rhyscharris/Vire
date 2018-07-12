@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title%}SongScore{% endblock %}
+
+{% block body %}
+
+<div class="review-form section shadow-1">
+	{% include 'includes/_newreviewform.html' %}
+</div>
+<div class="feed" id="feed">
+	<div class="section shadow-1 selector">
+		<div class="section-content">
+			<ul>
+				<li><a href="/feed/all" class="name line">All</a></li>
+				<li><a href="/feed/following" class="name line">Following</a></li>
+			</ul>
+		</div>
+	</div>
+	{% for review in reviews %}
+		{% include 'includes/_review.html' %}
+	{% endfor %}
+</div>
+
+<button>Next Page</button>
+
+{% endblock %}

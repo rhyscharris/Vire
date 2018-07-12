@@ -1,0 +1,35 @@
+<script type="text/javascript" src="/static/newreviewform.js"></script>
+<div class="section-content">
+	<h2 class="capital">Write a review</h2>
+	<form class="inline-form" id="newReview" action="/submit" method="post">
+		<div class="submit-left">
+			<div class="form-group text-group">
+				<input id="subject-input" class="light-text text-input" name="searchbox" placeholder="" type="text" required=""/>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+		    <label class="light-text">What music are you reviewing?</label>
+			</div>
+			<div id="subject-results" class="light-text"></div>
+			<div class="form-group text-group">
+				<input id="expansion-input" class="light-text text-input" name="text" placeholder="" type="text" data-length="200" required/>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label class="light-text">Expand on your review...</label>
+			</div>
+		</div>
+		<div class="submit-right">
+			<div class="rating form-group">
+				<input type="radio" id="star5" name="rating" value="5"><label for="star5">5 stars</label>
+				<input type="radio" id="star4" name="rating" value="4"><label for="star4">4 stars</label>
+				<input type="radio" id="star3" name="rating" value="3"><label for="star3">3 stars</label>
+				<input type="radio" id="star2" name="rating" value="2"><label for="star2">2 stars</label>
+				<input type="radio" id="star1" name="rating" value="1"><label for="star1">1 star</label>
+			</div>
+			<input class="submit button form-group" type="submit" value="Post"/>
+		</div>
+		<input type="hidden" name="subject_name"/>
+		<input type="hidden" name="subject_artist_name"/>
+		<input type="hidden" name="subject_image"/>
+		<input type="hidden" name="subject_type"/>
+	</form>
+</div>

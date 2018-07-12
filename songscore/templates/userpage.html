@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block pagename %}{{user.username}}{% endblock %}
+
+{% block body %}
+    {% include 'includes/_user.html' %}
+
+  <div class="section shadow-1 selector selector-many">
+	<div class="section-content">
+		<ul>
+      <li><a href="/user/{{ user.username }}/reviews">Reviews</a></li>
+      <li><a href="/user/{{ user.username }}/likes">Likes</a></li>
+      <li><a href="/user/{{ user.username }}/dislikes">Dislikes</a></li>
+      <li><a href="/user/{{ user.username }}/followers">Followers</a></li>
+      <li><a href="/user/{{ user.username }}/following">Following</a></li>
+		</ul>
+	</div>
+</div>
+
+
+    {% block contents %}
+    {% endblock %}
+{% endblock %}

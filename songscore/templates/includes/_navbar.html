@@ -1,0 +1,69 @@
+<div class="navigation shadow-1">
+  <div class="nav-container container">
+    <div class="brand">
+      <a href="/feed"><img class="logo" src="/static/images/logo.png"></img></a>
+      <a href="/feed">SongScore Alpha</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="/feed/all" class="line">Home</a>
+        </li>
+        <li>
+          <a href="#!" class="line">Notifications</a>
+        </li>
+        {% if session.logged_in %}
+        <li>
+          <a href="#!" class="img-dropdown"><img class="logo circle" src="/static/images/profile.png"></img></a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="/logout" class="">Log out</a>
+              <a href="https://gravatar.com" class="">Change profile pic</a>
+            </li>
+          </ul>
+        </li>
+        <!--DON'T DELETE. THE FOLLOWING CODE IS HOW YOU ADD A NORMAL, NON IMAGE DROPDOWN
+        <li>
+          <a href="#!" class="nav-dropdown-link">Test dropdown</a>
+          <ul class="nav-dropdown">
+            <li >
+              <a href="/logout" class="">Log out</a>
+              <a href="/logout" class="">Change profile pic</a>
+            </li>
+          </ul>
+        </li>!-->
+        {% else %}
+        <li>
+          <a href="/register">Sign up</a>
+        </li>
+        <li>
+          <a href="/login">Log in</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+(function($) { // start jquery
+  $(function() {
+    // If a link has a dropdown...
+    $('nav ul li a:not(:only-child)').click(function(e) {//add toggle
+      $(this).siblings('.nav-dropdown').toggle();
+      $('.nav-dropdown').not($(this).siblings()).hide();//if a drop down already open, close it
+      e.stopPropagation();
+    });
+    $('html').click(function() {
+      $('.nav-dropdown').hide();// Clicking away from dropdown removes dropdown class
+    });
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  });
+})(jQuery); // end jQuery
+</script>

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block pagename %}Login{% endblock %}
+
+{% block body %}
+<div class="section shadow-1">
+    <div class="section-content login-form">
+        <h2 class="capital">Log in</h2>
+        <form action="" method="POST">
+        <div class="form-group text-group">
+          <input required type="text" name="username" placeholder="" class="text-input light-text" value={{request.form.username}}>
+  				<span class="highlight"></span>
+  				<span class="bar"></span>
+  				<label class="light-text">Username</label>
+  			</div>
+        <div class="form-group text-group">
+          <input required type="password" name="password" placeholder="" class="text-input light-text" value={{request.form.password}}>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label class="light-text">Password</label>
+        </div>
+        <p>
+            <input class="button submit form-group" name"" value="Let me in!" type="submit">
+        </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

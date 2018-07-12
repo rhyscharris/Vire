@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<!-- Favicons and Icons -->
+		<link rel="shortcut icon" type="image/png" href="static/images/icons/favicon.png">
+		<link rel="icon" sizes="192x192" href="static/images/icons/favicon.png">
+		<link rel="apple-touch-icon" href="static/images/icons/favicon.png">
+
+		<meta charset="utf-8">
+		<title>Register - SongScore</title>
+		<link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+		<script type="text/javascript" src="static/jquery-3.2.1.min.js"></script>
+	</head>
+
+<body class="red-bg">
+	{% include 'includes/_messages.html'%}
+	<a class="top-right-button button fade-up fast" href="/login" style="">Log in</a>
+
+<div class="register-content-outer">
+  <div class="register-content-inner">
+    <div class="register-left white-text">
+      <div class="center-vert">
+			<div class="welcome-banner fade-up fast">
+	      <div class="img-container"><img src="static/images/logo-big.png"></div>
+	      <h1 class="white-text thin-text">Welcome to the SongScore Alpha</h1>
+			</div>
+			<ul class="">
+        <li id="one" class="fade-up">Leave quick scores and comments for all your favourite songs</li>
+        <li id="two" class="fade-up slow">Follow your friends to see what they love, and what they don't</li>
+        <li id="three" class="fade-up super-slow">Discover new music, and engage with the community</li>
+      </ul>
+    </div>
+    </div>
+		{% from "includes/_formhelpers.html" import render_field %}
+		<form action="" method="post">
+    <div class="register-right fade-up white-bg shadow-1">
+      <div class="section-content" style="width: auto">
+      <div class="form-group text-group">
+				{{ render_field(form.name, class="text-input", id="expansion-input", placeholder="", required="required") }}
+        <span class="highlight"></span>
+        <span class="bar"></span>
+				<label class="light-text">Display name</label>
+      </div>
+      <div class="form-group text-group">
+				{{ render_field(form.username, class="text-input", id="expansion-input", placeholder="", required="required") }}
+        <span class="highlight"></span>
+        <span class="bar"></span>
+				<label class="light-text">Username</label>
+      </div>
+      <div class="form-group text-group">
+				{{ render_field(form.email, class="text-input", id="expansion-input", placeholder="", required="required") }}
+        <span class="highlight"></span>
+        <span class="bar"></span>
+				<label class="light-text">Email</label>
+      </div>
+      <div class="form-group text-group">
+				{{ render_field(form.password, class="text-input", id="expansion-input", placeholder="", required="required") }}
+        <span class="highlight"></span>
+        <span class="bar"></span>
+				<label class="light-text">Password</label>
+      </div>
+      <div class="form-group text-group">
+				{{ render_field(form.confirm, class="text-input", id="expansion-input", placeholder="", required="required") }}
+        <span class="highlight"></span>
+        <span class="bar"></span>
+				<label class="light-text">Confirm password</label>
+      </div>
+      <div class="form-group text-group top-margin">
+        <input class="submit button" value="I'm in!" type="submit">
+      </div>
+			<a href="/login" class="sub-text" style="text-align: center"><p class="sub-text">I already have an account</p></a>
+		</form>
+    </div>
+  </div>
+</div>
+<body>

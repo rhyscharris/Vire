@@ -1,0 +1,37 @@
+<div class="no-margin section shadow-1">
+    <div class="section-content">
+        <img src="{{ user.picture }}" class="subject-group profile-image"/>
+        <div class="profile-info">
+          <h2 class="profile-name">{{ user.name }}</h2>
+          <h2 class="profile-username light-text">{{ "@" + user.username }}</h2>
+          {% set timesince = currenttime - user.register_datetime %}
+    				{% if timesince.days == 0 %}
+    					{% set timesince = timesince.seconds %}
+    					{% if timesince > 3600 %}
+    						{% set timesince = timesince / 3600 %}
+    						{% if timesince | round | int > 1 %}
+    						<p class="light-text date">Joined {{ timesince | round | int}} hours ago</p>
+    						{% else %}
+    						<p class="light-text date">Joined an hour ago</p>
+    						{% endif %}
+    					{% elif timesince > 60 %}
+    						{% set timesince = timesince / 60 %}
+    						{% if timesince | round | int > 1 %}
+    						<p class="light-text date">Joined {{ timesince | round | int}} minutes ago</p>
+    						{% else %}
+    						<p class="light-text date">Joined {{ timesince | round | int}} minute ago</p>
+    						{% endif %}
+    					{% else %}
+    						<div class="light-text date">Joined {{ timesince | round | int}} seconds ago</div>
+    					{% endif %}
+    				{% else %}
+    				<p class="light-text date">Joined {{ timesince.days }} days ago</p>
+    				{% endif %}
+          <form action="/follow" method="post">
+               <input type="hidden" name="user_id" value="{{ user.id }}"/>
+               <input type="submit" class="button" value="Follow"/>
+          </form>
+        </div>
+
+    </div>
+</div>

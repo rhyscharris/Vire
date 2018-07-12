@@ -1,0 +1,80 @@
+<div class="card">
+	<div class="content">
+		<div class="subject" style="background-image: url('{{ review.subject.art }}')">
+			<div>{{ review.subject.name }}</div>
+			<div class="artist">{{ review.subject.artist_name }}</div>
+		</div>
+		<div class="review">
+			<div class='top'>
+				<a href='/user/{{ review.user.username }}'>
+					<img class="picture" src="{{ review.user.picture }})"></img>
+				</a>
+				<a href='/user/{{ review.user.username }}'>
+					<div class="names">
+						<div class="name">{{ review.user.name }}</div>
+						<div class="username">{{ "@" + review.user.username }} · Xd</div>
+					</div>
+				</a>
+				<div class="stars">
+				{% for _ in range(review.stars) %}
+					<label style="color:#cd3538"> ★ </label> 
+            			{% endfor %}
+				{% for _ in range(5 - review.stars) %}
+					<label style="color:#ddd"> ★ </label>
+            			{% endfor %}
+				</div>
+			</div>
+			<div class="text">{{ review.text }}</div>
+		</div>
+	</div>
+	<div class="social">
+		{% if review.user_id != session["user_id"] %}
+			<form action="/like" method="post">
+				<input type="hidden" name="review_id" value="{{review.id}}"></input>
+				<button type='submit' class='like'><i class="fas fa-thumbs-up"></i></button>
+			</form>
+			<form action="/dislike" method="post">
+				<input type="hidden" name="review_id" value="{{review.id}}"></input>
+				<button type='submit' class='dislike'><i class="fas fa-thumbs-down"></i></button>
+			</form>
+		{% else %}
+			<form action="/delete" method="post">
+				<input type="hidden" name="review_id" value="{{review.id}}"></input>
+				<button type='submit' class='like'><i class="fas fa-trash-alt"></i></button>
+			</form>
+		{% endif %}
+		<form class="new-comment" action="/comment" method="post">
+			<input name="review_id" hidden value="{{ review.id }}">
+			<input name="text" placeholder='Type a comment...'></input>
+			<button type="submit" class='submit'><i class="fas fa-angle-right"></i></button>
+		</form>
+	</div>
+	{% for comment in review.comments %}
+		{% include 'includes/_comment.html' %}
+	{% endfor %}
+{#
+			{% set timesince = currenttime - review.datetime %}
+				{% if timesince.days == 0 %}
+					{% set timesince = timesince.seconds %}
+					{% if timesince > 3600 %}
+						{% set timesince = timesince / 3600 %}
+						{% if timesince | round | int > 1 %}
+						<p class="light-text date">Submitted {{ timesince | round | int}} hours ago</p>
+						{% else %}
+						<p class="light-text date">Submitted an hour ago</p>
+						{% endif %}
+					{% elif timesince > 60 %}
+						{% set timesince = timesince / 60 %}
+						{% if timesince | round | int > 1 %}
+						<p class="light-text date">Submitted {{ timesince | round | int}} minutes ago</p>
+						{% else %}
+						<p class="light-text date">Submitted {{ timesince | round | int}} minute ago</p>
+						{% endif %}
+					{% else %}
+						<div class="light-text date">Submitted {{ timesince | round | int}} seconds ago</div>
+					{% endif %}
+				{% else %}
+				<p class="light-text date">Submitted {{ timesince.days }} days ago</p>
+				{% endif %}
+#}
+</div>

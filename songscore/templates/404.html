@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<!-- Favicons and Icons -->
+		<link rel="shortcut icon" type="image/png" href="static/images/icons/favicon.png">
+		<link rel="icon" sizes="192x192" href="static/images/icons/favicon.png">
+		<link rel="apple-touch-icon" href="static/images/icons/favicon.png">
+
+		<meta charset="utf-8">
+		<title>404, not found</title>
+		<link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+		<script type="text/javascript" src="static/jquery-3.2.1.min.js"></script>
+	</head>
+
+<body class="red-bg">
+{% block title %}{% endblock %}
+
+{% block body %}
+
+	<div class="register-content-outer">
+	  <div class="error-page register-content-inner">
+	    <div class="register-left white-text">
+				<a href="/">
+	      <div class="center-vert">
+					<div class="welcome-banner">
+			      <div class="img-container fade-up fast"><img src="static/images/logo-big-mute.png"></div>
+			      <h1 class="white-text thin-text fade-up">404 - We couldn't find that one</h1>
+						<h2 class="white-text thin-text fade-up slow">Take me home!</h2>
+					</div>
+				</div>
+			</a>
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock %}
