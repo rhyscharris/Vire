@@ -8569,10 +8569,14 @@ h3 {
 .bg-gradient {
   background: #4568DC;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ee2e24, #f9a01b);
+  background: -webkit-linear-gradient(to left, #ee2e24, #f9a01b);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ee2e24, #f9a01b);
+  background: linear-gradient(to left, #ee2e24, #f9a01b);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-white {
+  background: white;
 }
 
 .material-icons {
@@ -8584,6 +8588,10 @@ h3 {
   height: 100%;
   /* width: 100%; */
   display: flex;
+}
+
+.navbar-brand {
+  color: #FB8C00 !important;
 }
 
 .navbar-brand img {
@@ -8605,8 +8613,13 @@ h3 {
   background-size: cover;
 }
 
-.bg-hero h1, p {
+.bg-hero h1, p, h2 {
   color: white;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
 }
 
 .items h3 {
@@ -8717,26 +8730,6 @@ footer .btn-sm, footer .btn-group-sm > .btn {
 
 .gallery-block.grid-gallery .item {
   margin-bottom: 20px;
-}
-
-div .tngbh-btn {
-  font-family: arial;
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-image: linear-gradient(#28a745, #28a745);
 }
 
 /*# sourceMappingURL=main.css.map */
